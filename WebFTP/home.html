@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style>
+        body{background: aqua}
+        .fieldset{
+            width: 25%;
+            text-align: left;
+        }
+    </style>
+
+</head>
+<body>
+{{$dir:=.CurrentDir}}
+{{$track:="/trackPage"}}
+<form enctype="multipart/form-data" action="/home/uploadPage" method="post">
+    <input type="file" name="file_name" value="Browse file">
+    <input type="submit" name="upload" value="store">
+    <input type="hidden" name="!.#dir I evaluated#" value="{{$dir}}">
+</form>
+<p></p>
+<form action="/home/dirCreationPage" method="post">
+    <label>
+        <input type="text" name="name" placeholder="directory name">
+    </label>
+    <input type="hidden" name="!.#dir I evaluated#" value="{{$dir}}">
+    <input type="submit" name="createDir" value="create directory">
+</form>
+<p></p>
+<fieldset style="color: green" class=fieldset>
+    <h1>Directory: {{$dir}}</h1>
+    <h1>Number of files: {{.FilesNumber}}</h1>
+    <h1>Number of folders: {{.FoldersNumber}}</h1>
+</fieldset>
+<p></p>
+<form>
+    <input type="submit" name="button" value="delete" formaction="/home/deletePage">
+    <input type="submit" name="button" value="download" formaction="/home/downloadPage">
+    <input type="hidden" name="!.#dir I evaluated#" value="{{$dir}}">
+    <input type="submit" name="return to parent" value="go back" formaction="/home{{$dir}}">
+    <p></p>
+    {{range .Folders}}
+        {{if eq $dir "/"}}
+        <li><a href="/home{{$dir}}{{.}}" style="color: purple">{{.}}</a><label>
+                <input  type="checkbox" name={{.}}>
+            </label></li>
+        {{else}}
+            <li><a href="/home{{$dir}}/{{.}}" style="color: purple">{{.}}</a><label>
+                    <input  type="checkbox" name={{.}}>
+                </label></li>
+        {{end}}
+    {{end}}
+    {{range .Files}}
+        <li>
+            <b style="color: blue">{{.}}</b><label>
+                <input  type="checkbox" name={{.}}>
+            </label>
+        </li>
+    {{end}}
+
+</form>
+</body>
+</html>
