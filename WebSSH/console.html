@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Console</title>
+    <style>
+        body{background: #411934}
+        .text {
+            background-color: purple;
+            color: green;
+            width: 99%;
+            font-size: 105%;
+        }
+    </style>
+</head>
+<body>
+{{range .}}
+    {{if .}}
+    <h1 style="color: green;font-size: 105%">>{{.}}</h1>
+    {{end}}
+{{end}}
+<p>
+</p>
+<form action="/SSHData/parseData" method="post">
+    <label>
+        <h3 style="color: green">
+            ><input type="text" style="border: none;outline: none" class="text" name="cmd">
+        </h3>
+    </label>
+</form>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebSSH</title>
+    <style>
+        .fieldset{
+            width: 75%;
+            margin: auto;
+            text-align: center;
+        }
+        .padding{
+            margin-left: 32px;
+        }
+    </style>
+</head>
+<body>
+<form action="/SSHAuthentication/result">
+    <fieldset class="fieldset">
+        <legend>Data</legend>
+        <div style="text-align: left">
+            <p><b style="padding-left: 10px">ssh server:</b>  <label>
+                    <input type="text" name="ip" value="185.20.227.83">
+                </label><b style="padding: 10px">port: </b><input type="text" name="port"></p>
+
+            <p><b style="padding-left: 10px">login: </b> <label>
+                    <input type="text" name="login" class="padding">
+                </label></p>
+
+            <p><b style="padding-left: 10px">password: </b> <label>
+                    <input type="text" name="password">
+                </label></p>
+        </div>
+        <p><input type="submit" value="Login" ></p>
+    </fieldset>
+</form>
+
+</body>
+</html>
