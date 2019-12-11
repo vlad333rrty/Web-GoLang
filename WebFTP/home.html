@@ -41,7 +41,7 @@
     <input type="submit" name="button" value="delete" formaction="/home/deletePage">
     <input type="submit" name="button" value="download" formaction="/home/downloadPage">
     <input type="hidden" name="!.#dir I evaluated#" value="{{$dir}}">
-    <input type="submit" name="return to parent" value="go back" formaction="/home{{$dir}}">
+{{/*    <input type="submit" name="return to parent" value="go back" formaction="/home{{$dir}}">*/}}
     <p></p>
     {{range .Folders}}
         {{if eq $dir "/"}}

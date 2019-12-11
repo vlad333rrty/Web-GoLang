@@ -37,7 +37,7 @@ func main() {
 		session *ssh.Session
 	)
 	http.HandleFunc("/", func(writer http.ResponseWriter, request *http.Request) {
-		http.ServeFile(writer, request, "index.html")
+		http.ServeFile(writer, request, "WebSSH/index.html")
 	})
 	http.HandleFunc("/SSHAuthentication/result", func(writer http.ResponseWriter, request *http.Request) {
 		ip := request.FormValue("ip")
@@ -108,7 +108,7 @@ func main() {
 	http.HandleFunc("/console", func(writer http.ResponseWriter, request *http.Request) {
 		n, err := stdout.Read(out)
 		handleError(err, false)
-		t, _ := template.ParseFiles("console.html")
+		t, _ := template.ParseFiles("WebSSH/console.html")
 
 		temp := string(out[:n])
 		k := strings.LastIndex(temp, "\n")
