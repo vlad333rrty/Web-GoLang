@@ -7,24 +7,26 @@
         body{background: #411934}
         .text {
             background-color: purple;
-            color: green;
-            width: 99%;
-            font-size: 105%;
+            color: limegreen;
+            width: auto;
+            font-size: 110%;
+            border: none;
+            outline: none;
         }
     </style>
 </head>
 <body>
-{{range .}}
+{{range .Lore}}
     {{if .}}
-    <h1 style="color: green;font-size: 105%">>{{.}}</h1>
+    <h1 style="color: limegreen;font-size: 105%">{{.}}</h1>
     {{end}}
 {{end}}
 <p>
 </p>
 <form action="/SSHData/parseData" method="post">
     <label>
-        <h3 style="color: green">
-            ><input type="text" style="border: none;outline: none" class="text" name="cmd">
+        <h3  class="text">
+            {{.Dir}}<input type="text"  class="text" name="cmd">
         </h3>
     </label>
 </form>
