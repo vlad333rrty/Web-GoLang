@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <style>
+        body{background: skyblue}
+        .text{
+            color: steelblue;
+            font-size: 105%;
+        }
+    </style>
+</head>
+<body>
+<form method="post" action="/home/sendLetter">
+    <table width="100%" cellspacing="0" cellpadding="4">
+        <tr>
+            <td align="right" width="100">Receiver: </td>
+            <td><input type="text" name="receiver" maxlength="50" size="40" class="text"></td>
+        </tr>
+        <tr>
+            <td align="right" width="100">Subject: </td>
+            <td><input type="text" name="subject" maxlength="50" size="40" class="text"></td>
+        </tr>
+        <tr>
+            <td align="right" valign="top">Letter: </td>
+            <td><textarea name="letter" cols="95" rows="30" class="text"></textarea></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Send the letter" style="color: navy"></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>

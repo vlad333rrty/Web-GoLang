@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Send</title>
+    <style>
+        body{background: skyblue}
+        .btn{
+            margin-left: 875px;
+            margin-top: 50px;
+            width: 75px;
+            height: 25px;
+            color: navy;
+        }
+    </style>
+</head>
+<body>
+<form method="post" action="{{.ReturnPage}}">
+    <h1 style="text-align: center;color: navy;white-space: pre-line " >
+        {{.Info}}
+    </h1>
+    <br>
+    <input type="submit" value="return" class="btn">
+</form>
+</body>
+</html>

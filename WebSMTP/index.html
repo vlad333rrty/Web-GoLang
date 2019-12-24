@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebSMTP</title>
+    <style>
+        .fieldset{
+            width: 75%;
+            margin: auto;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<form method="post" action="/SMTPAuthentication/result">
+<fieldset class="fieldset">
+    <legend style="text-align: center">Authentication</legend>
+        <p>
+            <b style="padding-left: 10px">login: </b>
+            <label style="margin-left: 31px">
+                <input type="text" name="login">
+            </label>
+            <b>
+                <label>
+                    <select name="options">
+                        <option>@mail.ru</option>
+                    </select>
+                </label>
+            </b>
+        </p>
+        <p><b style="padding-left: 10px">password: </b>
+            <label>
+                <input type="text" name="password">
+            </label>
+        </p>
+    <p style="text-align: center"><input type="submit" value="Login" ></p>
+
+</fieldset>
+</form>
+</body>
+</html>
